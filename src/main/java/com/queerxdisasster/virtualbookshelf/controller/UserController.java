@@ -1,8 +1,12 @@
-package com.queerxdisasster.virtualbookshelf.security;
+package com.queerxdisasster.virtualbookshelf.controller;
 
+import com.queerxdisasster.virtualbookshelf.dto.LoginDto;
+import com.queerxdisasster.virtualbookshelf.dto.UserRegistrationDto;
 import com.queerxdisasster.virtualbookshelf.entity.User;
 import com.queerxdisasster.virtualbookshelf.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.queerxdisasster.virtualbookshelf.security.*;
+import com.queerxdisasster.virtualbookshelf.service.UserService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -12,23 +16,18 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
-import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/users")
 @CrossOrigin(origins = "http://localhost:3000")
 public class UserController {
-    @Autowired
-    private UserService userService;
-    @Autowired
-    private JwtTokenService jwtTokenService;
-    @Autowired
-    private AuthenticationManager authenticationManager;
-
-    @Autowired
-    private UserRepository userRepository;
+    private final UserService userService;
+    private final JwtTokenService jwtTokenService;
+    private final AuthenticationManager authenticationManager;
+    private final UserRepository userRepository;
 
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@RequestBody UserRegistrationDto registrationDto) {
@@ -70,7 +69,8 @@ public class UserController {
     }
 
     @PostMapping("/validateToken")
-    public ResponseEntity<?> validateToken(@RequestBody String token) {
+    public ResponseEntity<?> validateToken(@RequestBody Map<String, String> request) {
+        String token = request.get("token");
         System.out.println("token=" + token);
         try {
             if (jwtTokenService.validateToken(token))

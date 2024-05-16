@@ -24,10 +24,8 @@ public class JwtTokenService {
     private UserRepository userRepository;
 
     public String createToken(String username) {
-
         User user = userRepository.findByUsername(username).orElse(null);
         if (user != null) {
-            userRepository.save(user);
             return JWT.create()
                     .withSubject(username)
                     .withExpiresAt(new Date(System.currentTimeMillis() + 36000000))
@@ -39,12 +37,11 @@ public class JwtTokenService {
     public boolean validateToken(String token) {
         try {
             Algorithm algorithm = Algorithm.HMAC512(secretKey);
-            JWTVerifier verifier = JWT.require(algorithm)
-                    .build();
+            JWTVerifier verifier = JWT.require(algorithm).build();
             verifier.verify(token);
             return true;
         } catch (JWTVerificationException exception) {
-            System.out.println("НЕВЕРНЫЙ ТОКЕН" + token);
+            System.out.println("INVALID TOKEN: " + token + " due to " + exception.getMessage());
             return false;
         }
     }
@@ -52,7 +49,6 @@ public class JwtTokenService {
     public Authentication getAuthentication(String token) {
         DecodedJWT decodedJWT = JWT.decode(token);
         String username = decodedJWT.getSubject();
-        // роли и пермишки можно передавать тут
         return new UsernamePasswordAuthenticationToken(username, null, Collections.singletonList(new SimpleGrantedAuthority("USER")));
     }
 }

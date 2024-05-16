@@ -1,4 +1,4 @@
-package com.queerxdisasster.virtualbookshelf.security;
+package com.queerxdisasster.virtualbookshelf.dto;
 
 import lombok.Data;
 

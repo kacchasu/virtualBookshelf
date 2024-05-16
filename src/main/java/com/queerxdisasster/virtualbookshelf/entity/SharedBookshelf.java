@@ -3,20 +3,21 @@ package com.queerxdisasster.virtualbookshelf.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
+
 @Data
 @Entity
 public class SharedBookshelf {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
 
-    @ManyToMany
-    private List<User> users;
+    @OneToMany(mappedBy = "sharedBookshelf", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<SharedBookshelfBook> sharedBookshelfBooks = new HashSet<>();
 
-    @ManyToMany
-    private List<Book> books;
-
-    // Getters and Setters
+    @OneToMany(mappedBy = "sharedBookshelf", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<UserBookshelf> userBookshelves = new HashSet<>();
 }

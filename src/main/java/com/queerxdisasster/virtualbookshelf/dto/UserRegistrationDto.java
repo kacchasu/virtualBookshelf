@@ -1,12 +1,14 @@
-package com.queerxdisasster.virtualbookshelf.security;
+package com.queerxdisasster.virtualbookshelf.dto;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
+@ToString
 public class UserRegistrationDto {
     private String username;
-    private String passwordHash;
+    private String password;
     private String email;
 }
