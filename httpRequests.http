@@ -1,0 +1,128 @@
+### GET request to get all books
+GET http://localhost:8080/api/books
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjMiLCJleHAiOjE3MTU4OTcyOTh9.xqAj_WaGmqVvn-X9gJDmg9WwISmoY5nERaRvRq26pJvj-MaUVEtJBasBHRErgzCr0uJj8jYHeN41RAIwC9P7nQ
+
+### GET request to get a book by ID
+GET http://localhost:8080/api/books/{id}
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuZXd1c2VyIiwiZXhwIjoxNzE1NzI3ODYzfQ.T-aDdxidoP0EGD3JwGQKrKpWu2kPRBvmGI5hUot-Epx4d2PYmwCRhlXJOrfRc6TyUhX9lCZIA6kcQGyMGNyDyw
+
+### GET request to get books by category ID
+GET http://localhost:8080/api/books/category/{categoryId}
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuZXd1c2VyIiwiZXhwIjoxNzE1NzI3ODYzfQ.T-aDdxidoP0EGD3JwGQKrKpWu2kPRBvmGI5hUot-Epx4d2PYmwCRhlXJOrfRc6TyUhX9lCZIA6kcQGyMGNyDyw
+### POST request to register a new user
+POST http://localhost:8080/api/users/register
+Content-Type: application/json
+
+{
+  "username": "123",
+  "password": "123",
+  "email": "123@123.123"
+}
+### POST request to save a new book
+POST http://localhost:8080/api/books
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjMiLCJleHAiOjE3MTU5MTk1NDZ9.p1H0q64ca_fdh8SbWD8IdI4YnNlS4vihNpdJmE6ewjxC5405jJnSJ7n3WN4i-fPWG8JEpjhcpyKUYd1aI29mgw
+Content-Type: application/json
+
+{
+  "title": "The Great Gatsby",
+  "author": "F. Scott Fitzgerald",
+  "imageUrl": "http://example.com/images/gatsby.jpg",
+  "description": "A novel set in the Jazz Age that tells the story of the mysterious millionaire Jay Gatsby and his obsession with the beautiful Daisy Buchanan.",
+  "categories": [
+    {
+      "name": "Classic"
+    },
+    {
+      "name": "Fiction"
+    }
+  ]
+}
+
+### GET request to get all categories
+GET http://localhost:8080/api/categories
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjMiLCJleHAiOjE3MTU5MTk1NDZ9.p1H0q64ca_fdh8SbWD8IdI4YnNlS4vihNpdJmE6ewjxC5405jJnSJ7n3WN4i-fPWG8JEpjhcpyKUYd1aI29mgw
+### GET request to get books by category id
+GET http://localhost:8080/api/book-categories/categories/4
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjMiLCJleHAiOjE3MTU5MTk1NDZ9.p1H0q64ca_fdh8SbWD8IdI4YnNlS4vihNpdJmE6ewjxC5405jJnSJ7n3WN4i-fPWG8JEpjhcpyKUYd1aI29mgw
+Content-Type: application/json
+### GET request to get book categories
+GET http://localhost:8080/api/book-categories/books/2
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjMiLCJleHAiOjE3MTU5MTk1NDZ9.p1H0q64ca_fdh8SbWD8IdI4YnNlS4vihNpdJmE6ewjxC5405jJnSJ7n3WN4i-fPWG8JEpjhcpyKUYd1aI29mgw
+Content-Type: application/json
+
+
+### GET request to get a category by ID
+GET http://localhost:8080/api/categories/{id}
+### POST request to save a new category
+POST http://localhost:8080/api/categories
+Authorization: Bearer eyJ0eXAiOiJKV1QijnikLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuZXd1c2VyIiwiZXhwIjoxNzE1NzI3ODYzfQ.T-aDdxidoP0EGD3JwGQKrKpWu2kPRBvmGI5hUot-Epx4d2PYmwCRhlXJOrfRc6TyUhX9lCZIA6kcQGyMGNyDyw
+Content-Type: application/json
+
+{
+  "name": "Category Name"
+}
+### GET request to get all reviews
+GET http://localhost:8080/api/reviews
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuZXd1c2VyMSIsImV4cCI6MTcxNTc0Njg5OX0.oEV2f9wom-nooHdnVBK_nvE0h_yMJx9lwGN7CusvyGqK-1HvK2ZcXrFpz8IDAQA-B9pB3Fo0wHNl0eFmNK6InQ
+
+### GET request to get a review by ID
+GET http://localhost:8080/api/reviews/{id}
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuZXd1c2VyMSIsImV4cCI6MTcxNTc0Njg5OX0.oEV2f9wom-nooHdnVBK_nvE0h_yMJx9lwGN7CusvyGqK-1HvK2ZcXrFpz8IDAQA-B9pB3Fo0wHNl0eFmNK6InQ
+
+### GET request to get reviews by book ID
+GET http://localhost:8080/api/reviews/book/{bookId}
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuZXd1c2VyMSIsImV4cCI6MTcxNTc0Njg5OX0.oEV2f9wom-nooHdnVBK_nvE0h_yMJx9lwGN7CusvyGqK-1HvK2ZcXrFpz8IDAQA-B9pB3Fo0wHNl0eFmNK6InQ
+### POST request to save a new review
+POST http://localhost:8080/api/reviews
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuZXd1c2VyMSIsImV4cCI6MTcxNTc0Njg5OX0.oEV2f9wom-nooHdnVBK_nvE0h_yMJx9lwGN7CusvyGqK-1HvK2ZcXrFpz8IDAQA-B9pB3Fo0wHNl0eFmNK6InQ
+
+{
+  "comment": "Great book!",
+  "rating": 4.5,
+  "book": {"id": 1},
+  "user": {"id": 1}
+}
+### GET request to get all shared bookshelves for the authenticated user
+GET http://localhost:8080/api/shared-bookshelves
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuZXd1c2VyMSIsImV4cCI6MTcxNTc0Njg5OX0.oEV2f9wom-nooHdnVBK_nvE0h_yMJx9lwGN7CusvyGqK-1HvK2ZcXrFpz8IDAQA-B9pB3Fo0wHNl0eFmNK6InQ
+### GET request to get a shared bookshelf by ID
+GET http://localhost:8080/api/shared-bookshelves/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuZXd1c2VyMSIsImV4cCI6MTcxNTc0ODQ4MX0.xYJxNP1JdELs6_A7wh5I5kLeJQfLV_RxITcPJhWbKGLnenX8pg0garHMwuxnHX0A1VBufQxdYBzDKo-WUmBDpw
+### POST request to save a new shared bookshelf
+POST http://localhost:8080/api/shared-bookshelves
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuZXd1c2VyMSIsImV4cCI6MTcxNTc0Njg5OX0.oEV2f9wom-nooHdnVBK_nvE0h_yMJx9lwGN7CusvyGqK-1HvK2ZcXrFpz8IDAQA-B9pB3Fo0wHNl0eFmNK6InQ
+
+{
+  "name": "My Bookshelf"
+}
+### POST request to invite a user to a shared bookshelf
+POST http://localhost:8080/api/shared-bookshelves/1/invite?inviteeUsername=newuser2
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuZXd1c2VyMSIsImV4cCI6MTcxNTc0Njg5OX0.oEV2f9wom-nooHdnVBK_nvE0h_yMJx9lwGN7CusvyGqK-1HvK2ZcXrFpz8IDAQA-B9pB3Fo0wHNl0eFmNK6InQ
+
+###
+DELETE http://localhost:8080/api/shared-bookshelves/1/remove?username=newuser2
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuZXd1c2VyMSIsImV4cCI6MTcxNTc0Njg5OX0.oEV2f9wom-nooHdnVBK_nvE0h_yMJx9lwGN7CusvyGqK-1HvK2ZcXrFpz8IDAQA-B9pB3Fo0wHNl0eFmNK6InQ
+
+
+### POST request to login a user
+POST http://localhost:8080/api/users/login
+Content-Type: application/json
+
+{
+  "username": "newuser2",
+  "password": "newpassword"
+}
+### POST request to validate a JWT token
+POST http://localhost:8080/api/users/validateToken
+Content-Type: application/json
+
+{
+  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuZXd1c2VyIiwiZXhwIjoxNzE1NzMxMTQ4fQ.NykuRHXQHHgFAXeRGwc08J_yIq5TZ_uJeZ0gmVcbMGYHFzOEp4fxPpPr-Zy4KNTfQKwAS_nr08XBNSDEzBvGig"
+}
+### POST request to logout a user
+POST http://localhost:8080/api/users/logout
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuZXd1c2VyIiwiZXhwIjoxNzE1NzI4Njg1fQ.ZrvX8vbSyvK1Yo_7ay2kqzEwCRWZJr09AV_EVbmRxtqUgv5xLbCnk1LxaosKvRyv2rl_hUNCVA_SejH0lXSpcw
