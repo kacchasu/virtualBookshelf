@@ -63,19 +63,22 @@ Content-Type: application/json
 }
 ### GET request to get all reviews
 GET http://localhost:8080/api/reviews
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuZXd1c2VyMSIsImV4cCI6MTcxNTc0Njg5OX0.oEV2f9wom-nooHdnVBK_nvE0h_yMJx9lwGN7CusvyGqK-1HvK2ZcXrFpz8IDAQA-B9pB3Fo0wHNl0eFmNK6InQ
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjM0IiwiZXhwIjoxNzE1OTQzMTU5fQ.2AMLrtVCKoqnqTKKhT6ZgsRDB6jl6h4mhJmXfLrMAWmZIJYI6Ro9wJ1e6VwAGR2WwMa6Bi6RRXB1e4L6szyBqw
+### GET request to get all reviews by user id
+GET http://localhost:8080/api/reviews/user/2
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjMiLCJleHAiOjE3MTU5NDM1MTl9.eGi3w7_m6Y4BYpXSu5rJPh4IGYkHCo7Q0R32hBLXnhQwbqK7ldqadYnKFp-pITvwoaoOr_B0Qah2NwosyOr8vA
 
 ### GET request to get a review by ID
-GET http://localhost:8080/api/reviews/{id}
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuZXd1c2VyMSIsImV4cCI6MTcxNTc0Njg5OX0.oEV2f9wom-nooHdnVBK_nvE0h_yMJx9lwGN7CusvyGqK-1HvK2ZcXrFpz8IDAQA-B9pB3Fo0wHNl0eFmNK6InQ
+GET http://localhost:8080/api/reviews/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjMiLCJleHAiOjE3MTU5MTk1NDZ9.p1H0q64ca_fdh8SbWD8IdI4YnNlS4vihNpdJmE6ewjxC5405jJnSJ7n3WN4i-fPWG8JEpjhcpyKUYd1aI29mgw
 
 ### GET request to get reviews by book ID
-GET http://localhost:8080/api/reviews/book/{bookId}
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuZXd1c2VyMSIsImV4cCI6MTcxNTc0Njg5OX0.oEV2f9wom-nooHdnVBK_nvE0h_yMJx9lwGN7CusvyGqK-1HvK2ZcXrFpz8IDAQA-B9pB3Fo0wHNl0eFmNK6InQ
+GET http://localhost:8080/api/reviews/book/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjMiLCJleHAiOjE3MTU5MTk1NDZ9.p1H0q64ca_fdh8SbWD8IdI4YnNlS4vihNpdJmE6ewjxC5405jJnSJ7n3WN4i-fPWG8JEpjhcpyKUYd1aI29mgw
 ### POST request to save a new review
 POST http://localhost:8080/api/reviews
 Content-Type: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuZXd1c2VyMSIsImV4cCI6MTcxNTc0Njg5OX0.oEV2f9wom-nooHdnVBK_nvE0h_yMJx9lwGN7CusvyGqK-1HvK2ZcXrFpz8IDAQA-B9pB3Fo0wHNl0eFmNK6InQ
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjMiLCJleHAiOjE3MTU5MTk1NDZ9.p1H0q64ca_fdh8SbWD8IdI4YnNlS4vihNpdJmE6ewjxC5405jJnSJ7n3WN4i-fPWG8JEpjhcpyKUYd1aI29mgw
 
 {
   "comment": "Great book!",
@@ -113,8 +116,8 @@ POST http://localhost:8080/api/users/login
 Content-Type: application/json
 
 {
-  "username": "newuser2",
-  "password": "newpassword"
+  "username": "123",
+  "password": "123"
 }
 ### POST request to validate a JWT token
 POST http://localhost:8080/api/users/validateToken
