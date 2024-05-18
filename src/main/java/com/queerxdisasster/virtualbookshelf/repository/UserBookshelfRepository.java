@@ -4,7 +4,6 @@ import com.queerxdisasster.virtualbookshelf.entity.UserBookshelf;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,4 +14,6 @@ public interface UserBookshelfRepository extends JpaRepository<UserBookshelf, Lo
     Optional<UserBookshelf> findBySharedBookshelfIdAndUserId(Long bookshelfId, Long userId);
 
     void deleteBySharedBookshelfIdAndUserId(Long bookshelfId, Long userId);
+
+    List<UserBookshelf> findBySharedBookshelfId(Long userId);
 }

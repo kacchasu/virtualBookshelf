@@ -2,6 +2,7 @@ package com.queerxdisasster.virtualbookshelf.controller;
 
 import com.queerxdisasster.virtualbookshelf.dto.LoginDto;
 import com.queerxdisasster.virtualbookshelf.dto.UserRegistrationDto;
+import com.queerxdisasster.virtualbookshelf.entity.Book;
 import com.queerxdisasster.virtualbookshelf.entity.User;
 import com.queerxdisasster.virtualbookshelf.repository.UserRepository;
 import com.queerxdisasster.virtualbookshelf.security.*;
@@ -29,6 +30,12 @@ public class UserController {
     private final AuthenticationManager authenticationManager;
     private final UserRepository userRepository;
 
+    @GetMapping("/{username}")
+    public ResponseEntity<User> getUserByUsername(@PathVariable String username) {
+        return userRepository.findByUsername(username)
+                .map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@RequestBody UserRegistrationDto registrationDto) {
         User registeredUser = userService.registerUser(registrationDto);
