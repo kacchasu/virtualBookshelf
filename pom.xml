@@ -8,6 +8,7 @@
         <version>3.0.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+    <packaging>jar</packaging>
     <groupId>com.queerxdisasster</groupId>
     <artifactId>virtualBookshelf</artifactId>
     <version>0.0.1-SNAPSHOT</version>
