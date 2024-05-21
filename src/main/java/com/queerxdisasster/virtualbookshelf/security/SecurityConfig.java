@@ -53,7 +53,6 @@ public class SecurityConfig {
                         .requestMatchers(new AntPathRequestMatcher("/api/users/register")).permitAll()
                         .requestMatchers(new AntPathRequestMatcher("/api/users/login")).permitAll()
                         .requestMatchers(new AntPathRequestMatcher("/api/users/validateToken")).permitAll()
-                        .requestMatchers(new AntPathRequestMatcher("/src/main/resources/static/**")).permitAll()
                         .anyRequest().authenticated() // Все остальные запросы требуют аутентификации
                 )
                 .httpBasic().and()
@@ -67,7 +66,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000", "http://176.109.106.12:3000"));
+        configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000", "http://176.109.103.170:3000"));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("*"));
         configuration.setAllowCredentials(true);
